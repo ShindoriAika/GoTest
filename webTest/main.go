@@ -17,18 +17,18 @@ func (s fugaHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 func hogeHandler(w http.ResponseWriter, req *http.Request) {
 	// HTMLテキストをhttp.ResponseWriterへ書き込む
 	io.WriteString(w, `
-    <!DOCTYPE html>
-    <html lang="ja">
-    <head>
-      <meta charset="UTF-8">
-      <title>Go webアプリ test</title>
-    </head>
-    <body>
-      <h1>Hello, World!</h1>
-      <p>http.HandleFunc関数でハンドラを定義した場合</p>
-    </body>
-    </html>
-`)
+		<!DOCTYPE html>
+		<html lang="ja">
+			<head>
+				<meta charset="UTF-8">
+				<title>Go webアプリ test</title>
+			</head>
+			<body>
+				<h1>Hello, World!</h1>
+				<p>http.HandleFunc関数でハンドラを定義した場合</p>
+			</body>
+		</html>
+	`)
 }
 
 func main() {
@@ -38,14 +38,14 @@ func main() {
 	http.Handle("/fuga", fugaHandler(`
 		<!DOCTYPE html>
 		<html lang="ja">
-		<head>
-		<meta charset="UTF-8">
-		<title>Go webアプリ test</title>
-		</head>
-		<body>
-		<h1>Hello, World!</h1>
-		<p>http.Handle関数でハンドラを定義した場合</p>
-		</body>
+			<head>
+				<meta charset="UTF-8">
+				<title>Go webアプリ test</title>
+			</head>
+			<body>
+				<h1>Hello, World!</h1>
+				<p>http.Handle関数でハンドラを定義した場合</p>
+			</body>
 		</html>
   	`))
 	// ルートへのリクエストを"html"ディレクトリ内のHTMLファイルで処理する
